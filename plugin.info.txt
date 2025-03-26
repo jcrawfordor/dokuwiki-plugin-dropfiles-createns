@@ -1,7 +1,7 @@
-base   dropfiles-createns
+base   dropfilescreatens
 author J. B. Crawford
 email  jesse@jbcrawford.us
 date   2025-03-25
-name   dropfiles-createns plugin
+name   dropfiles createns version
 desc   Version of dropfiles that creates a page-specific namespace
 url    https://dokuwiki.org/plugin:dropfiles-createns
