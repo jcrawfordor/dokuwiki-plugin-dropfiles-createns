@@ -74,8 +74,8 @@ jQuery(function () {
         var $errorDialog = jQuery('#' + ERROR_DIALOG_ID);
         var $newInput = jQuery('<form></form>');
         $newInput.append(jQuery('<input name="filename">').val(filesThatExist[0].name).css('margin-right', '0.4em'));
-        $newInput.append(jQuery('<button name="rename" type="submit">' + window.LANG.plugins.dropfiles.rename + '</button>'));
-        $newInput.append(jQuery('<button name="cancel">' + window.LANG.plugins.dropfiles.cancel + '</button>'));
+        $newInput.append(jQuery('<button name="rename" type="submit">' + window.LANG.plugins.dropfilescreatens.rename + '</button>'));
+        $newInput.append(jQuery('<button name="cancel">' + window.LANG.plugins.dropfilescreatens.cancel + '</button>'));
         $newInput.find('button').button();
         $newInput.on('submit', function (event) {
             event.preventDefault();
@@ -102,23 +102,23 @@ jQuery(function () {
      */
     function showErrorDialog() {
         var fileName = filesThatExist[0].newFileName || filesThatExist[0].name;
-        var text = window.LANG.plugins.dropfiles['popup:fileExists'].replace('%s', fileName);
+        var text = window.LANG.plugins.dropfilescreatens['popup:fileExists'].replace('%s', fileName);
         if (fileName !== filesThatExist[0].name) {
-            text += ' ' + window.LANG.plugins.dropfiles['popup:originalName'].replace('%s', filesThatExist[0].name);
+            text += ' ' + window.LANG.plugins.dropfilescreatens['popup:originalName'].replace('%s', filesThatExist[0].name);
         }
-        var errorTitle = window.LANG.plugins.dropfiles['title:fileExistsError'];
+        var errorTitle = window.LANG.plugins.dropfilescreatens['title:fileExistsError'];
         var $errorDialog = jQuery('<div id="' + ERROR_DIALOG_ID + '" title="' + errorTitle + '"></div>').text(text).appendTo(jQuery('body'));
         var buttons = [
             {
-                text: window.LANG.plugins.dropfiles.skip,
+                text: window.LANG.plugins.dropfilescreatens.skip,
                 click: skipFile
             },
             {
-                text: window.LANG.plugins.dropfiles.rename,
+                text: window.LANG.plugins.dropfilescreatens.rename,
                 click: renameFile
             },
             {
-                text: window.LANG.plugins.dropfiles.overwrite,
+                text: window.LANG.plugins.dropfilescreatens.overwrite,
                 click: overwriteFile
             }
         ];
@@ -126,7 +126,7 @@ jQuery(function () {
         if (filesThatExist.length > 1) {
             buttons.push(
                 {
-                    text: window.LANG.plugins.dropfiles.overwriteAll,
+                    text: window.LANG.plugins.dropfilescreatens.overwriteAll,
                     click: overwriteAll
                 }
             );
@@ -412,7 +412,7 @@ jQuery(function () {
         enableDragAndDrop($filelisting);
 
         if (!didInit) {
-            var widgetTitle = window.LANG.plugins.dropfiles['title:fileUpload'];
+            var widgetTitle = window.LANG.plugins.dropfilescreatens['title:fileUpload'];
             var $widget = jQuery('<div title="' + widgetTitle + '" id="' + UPLOAD_PROGRESS_WIDGET_ID + '"></div>').hide();
             jQuery('body').append($widget);
         }
