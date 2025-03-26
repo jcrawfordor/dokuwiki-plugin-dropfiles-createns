@@ -397,7 +397,9 @@ jQuery(function () {
             var $targetRow = jQuery(target).closest('tr');
             return $targetRow.data('namespace') || $targetRow.data('childof') || $filelisting.data('namespace') || window.JSINFO.namespace;
         }
-        return window.JSINFO.namespace;
+        // Modified for the createns version - if just dropped on a page, add the page's own ID to the target namespace.
+        // This way the file will be uploaded to an NS that is unique to this page.
+        return window.JSINFO.namespace + ':' + window.JSINFO.id;
     }
 
     /**
